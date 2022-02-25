@@ -1,0 +1,13 @@
+header.appbar-root {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: var(--color-bg);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+}
+
+.appbar-container {
+  display: flex;
+  flex-direction: row;
+}
