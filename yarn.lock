@@ -243,6 +243,11 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@iconicicons/react@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@iconicicons/react/-/react-1.5.0.tgz#906c1c8d5114be2c6bd9e4b31be3eb1123801a7d"
+  integrity sha512-WEPtx5uYyz1zSpRSrdpBIY6Wdq2T46vHWedIJQDoSnFZ+BsL1Sk2Sggp0nShetUm7yImtINiPD3To5okGoDprQ==
+
 "@jridgewell/resolve-uri@^3.0.3":
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.0.5.tgz#68eb521368db76d040a6315cdb24bf2483037b9c"

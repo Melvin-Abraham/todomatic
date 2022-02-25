@@ -1,0 +1,106 @@
+/* #region root */
+
+.add-todo-box-root {
+  --placeholder-color: rgba(255, 255, 255, 0.3);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.025);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5em;
+  transition: all 250ms ease;
+  gap: 1em;
+  padding: 0.3em;
+}
+
+.add-todo-box-root:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.add-todo-box-root[data-active=true] {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 1.5em rgba(34, 121, 219, 0.25);
+}
+
+/* #endregion */
+
+/* #region leading */
+
+.add-todo-box-leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1em;
+  font-size: 1.2em;
+  color: var(--placeholder-color);
+}
+
+.add-todo-box-root[data-active=true] > .add-todo-box-leading {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+/* #endregion */
+
+/* #region input */
+
+.add-todo-box-input {
+  flex-grow: 1;
+  height: 2em;
+  background-color: transparent;
+  color: var(--color-fg);
+  outline: none;
+  border: none;
+  font: inherit;
+  caret-color: var(--color-accent);
+}
+
+.add-todo-box-input::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* #endregion */
+
+/* #region button */
+
+.add-todo-button-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-todo-button {
+  cursor: pointer;
+  height: 3.5em;
+  width: 3.5em;
+  background-color: var(--color-accent);
+  font: inherit;
+  color: var(--color-fg);
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  transition: all 250ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-todo-button:focus-visible {
+  transform: scale(1.1);
+}
+
+.add-todo-button:hover {
+  opacity: 0.9;
+}
+
+.add-todo-button:active {
+  opacity: 0.7;
+}
+
+.add-todo-button:disabled {
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* #endregion */
