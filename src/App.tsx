@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import React from 'react';
+import Appbar from 'components/Appbar/Appbar';
+import './App.css';
 
 function App() {
-  return <></>
+  return (
+    <div className="app">
+      <Appbar />
+    </div>
+  )
 }
 
 export default App;
