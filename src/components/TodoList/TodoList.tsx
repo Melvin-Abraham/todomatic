@@ -11,12 +11,7 @@ function TodoList({ todoList }: TodoListProps) {
   return (
     <ul className="todo-list-root">
       {todoList.map((todoItem) => (
-        <TodoListItem
-          todoItem={todoItem}
-          onEdit={() => {}}
-          onDelete={() => {}}
-          onToggleCompletion={() => {}}
-        />
+        <TodoListItem key={todoItem.id} todoItem={todoItem} />
       ))}
     </ul>
   )
