@@ -4,11 +4,11 @@ import {
   ReducerAction,
   BaseTodoItem,
   AddAction,
-  RemoveAction
+  RemoveAction,
 } from './types';
 
 /**
- * Returns the state with the new todo item appended
+ * Returns the state with the new todo item prepended
  *
  * @param state
  * Current app state
@@ -20,7 +20,7 @@ function addTodoItem(state: TodoItem[], partialTodoItem: AddAction['payload']) {
   const id = Date.now().toString();
   const todoItem = { ...partialTodoItem, id };
 
-  const updatedTodoItemsList = [ ...state, todoItem ];
+  const updatedTodoItemsList = [ todoItem, ...state ];
   return updatedTodoItemsList;
 }
 
