@@ -34,6 +34,7 @@ function TodoListItem({ todoItem, onEdit, onDelete, onToggleCompletion }: TodoLi
           type="checkbox"
           checked={todoItem.complete}
           id={`checkbox-${todoItem.id}`}
+          title={`Mark item "${todoItem.todo}" as ${todoItem.complete ? 'pending' : 'completed'}`}
         />
 
         <label
