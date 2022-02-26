@@ -1,4 +1,5 @@
 .todo-list-item-root {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -15,6 +16,14 @@
   flex-direction: row;
   align-items: center;
   gap: 1em;
+}
+
+.todo-list-item-click-target {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 /* #region checkbox */
@@ -83,4 +92,5 @@ input[type=checkbox]:active {
   display: flex;
   flex-direction: row;
   gap: 0.5em;
+  z-index: 1;
 }

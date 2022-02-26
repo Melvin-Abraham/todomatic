@@ -36,20 +36,25 @@ function TodoListItem({ todoItem }: TodoListItemProps) {
     },
   ];
 
+  const onToggleCompletion = () => dispatch({
+    type: 'toggleCompletion',
+    payload: todoItem.id,
+  });
+
   return (
     <li className="todo-list-item-root" data-completed={todoItem.complete}>
+      <div
+        className="todo-list-item-click-target"
+        onClick={onToggleCompletion}
+      />
+
       <div className="todo-list-item-primary-content">
         <input
           type="checkbox"
           checked={todoItem.complete}
           id={`checkbox-${todoItem.id}`}
           title={`Mark item "${todoItem.todo}" as ${todoItem.complete ? 'pending' : 'completed'}`}
-          onChange={() => {
-            dispatch({
-              type: 'toggleCompletion',
-              payload: todoItem.id,
-            })
-          }}
+          onChange={onToggleCompletion}
         />
 
         <label
