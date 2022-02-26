@@ -20,12 +20,14 @@ function App() {
 
         <main>
           <Container>
-            <AddTodoBox />
+            <div className="persistent-header">
+              <AddTodoBox />
 
-            <TabGroup
-              activeFilter={filterBy}
-              onFilterChange={(filterOption) => setFilterBy(filterOption)}
-            />
+              <TabGroup
+                activeFilter={filterBy}
+                onFilterChange={(filterOption) => setFilterBy(filterOption)}
+              />
+            </div>
 
             <TodoList todoList={todoItems} filterBy={filterBy} />
           </Container>
