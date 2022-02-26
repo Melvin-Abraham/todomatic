@@ -36,6 +36,7 @@ input[type=checkbox] {
   height: var(--checkbox-size);
   width: var(--checkbox-size);
   border-radius: 0.3em;
+  flex-shrink: 0;
   transition: all 250ms ease;
 }
 
