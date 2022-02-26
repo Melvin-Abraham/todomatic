@@ -70,7 +70,7 @@ function editTodoItem(
       // Merge the old todo item with edited one
       const updatedTodoItem = {
         ...todoItem,
-        partialTodoItem,
+        ...partialTodoItem,
       };
 
       return updatedTodoItem;
