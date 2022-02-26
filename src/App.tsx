@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import Appbar from 'components/Appbar/Appbar';
 import Container from 'components/Container/Container';
 import AddTodoBox from 'components/AddTodoBox/AddTodoBox';
+import TodoList from 'components/TodoList/TodoList';
 import reducer from 'utils/reducer';
 import dummyData from 'utils/dummyData';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Container>
           <AddTodoBox />
+          <TodoList todoList={todoItems} />
         </Container>
       </main>
     </div>

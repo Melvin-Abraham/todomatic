@@ -1,0 +1,59 @@
+.todo-list-item-root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.6em 0.6em 0.6em 1em;
+  margin-top: 0.5em;
+  gap: 0.5em;
+  border-radius: 0.5em;
+}
+
+.todo-list-item-primary-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+input[type=checkbox] {
+  --checkbox-size: 1.5em;
+
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  height: var(--checkbox-size);
+  width: var(--checkbox-size);
+  border-radius: 0.3em;
+  transition: all 250ms ease;
+}
+
+input[type=checkbox]:checked {
+  background-color: var(--color-accent);
+}
+
+input[type=checkbox]:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+input[type=checkbox]:active {
+  transform: scale(1.15);
+  opacity: 0.5;
+}
+
+.todo-list-item-root[data-completed=true] .todo-list-item-label {
+  /* text-decoration: line-through; */
+  opacity: 0.5;
+}
+
+.todo-list-item-label {
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+
+.todo-list-item-actions-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}

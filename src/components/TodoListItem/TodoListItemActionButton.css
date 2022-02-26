@@ -1,0 +1,30 @@
+.todo-list-item-button {
+  --action-button-size: 2.5em;
+
+  cursor: pointer;
+  height: var(--action-button-size);
+  width: var(--action-button-size);
+  background-color: rgba(255, 255, 255, 0.1);
+  font: inherit;
+  color: var(--color-fg);
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  transition: all 250ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list-item-button:focus-visible {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.todo-list-item-button:hover {
+  opacity: 0.9;
+}
+
+.todo-list-item-button:active {
+  opacity: 0.7;
+}
