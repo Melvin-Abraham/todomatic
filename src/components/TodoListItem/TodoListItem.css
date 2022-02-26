@@ -17,6 +17,8 @@
   gap: 1em;
 }
 
+/* #region checkbox */
+
 input[type=checkbox] {
   --checkbox-size: 1.5em;
 
@@ -42,15 +44,40 @@ input[type=checkbox]:active {
   opacity: 0.5;
 }
 
-.todo-list-item-root[data-completed=true] .todo-list-item-label {
-  /* text-decoration: line-through; */
-  opacity: 0.5;
-}
+/* #endregion */
+
+/* #region label */
 
 .todo-list-item-label {
   overflow-x: hidden;
   overflow-wrap: break-word;
+  transition: all 250ms ease;
+  position: relative;
 }
+
+.todo-list-item-label::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 0;
+  background-color: rgba(255, 255, 255, 1);
+  transition: all 500ms ease;
+}
+
+.todo-list-item-root[data-completed=true] .todo-list-item-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.todo-list-item-root[data-completed=true] .todo-list-item-label::before {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* #endregion */
 
 .todo-list-item-actions-group {
   display: flex;
