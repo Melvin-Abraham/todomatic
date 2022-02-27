@@ -1,0 +1,22 @@
+.todo-list-empty-state-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  text-align: center;
+}
+
+.todo-list-empty-state-illustration {
+  opacity: 0.3;
+  font-size: clamp(1rem, 6rem, 20vw);
+}
+
+.todo-list-empty-state-heading {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.todo-list-empty-state-details {
+  opacity: 0.6;
+}

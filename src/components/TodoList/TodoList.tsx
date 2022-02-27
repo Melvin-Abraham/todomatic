@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoListItem from 'components/TodoListItem/TodoListItem';
 import RenameModal from 'components/RenameModal/RenameModal';
+import TodoListEmptyState from 'components/TodoList/TodoListEmptyState';
 import { FilterOption } from 'components/TabGroup/TabGroup';
 import { TodoItem } from 'utils/types';
 import './TodoList.css';
@@ -42,6 +43,10 @@ function TodoList({ todoList, filterBy }: TodoListProps) {
     // Reset todo item for editing. This will hide the
     // rename modal
     setEditTodoItem(undefined);
+  }
+
+  if (filteredTodoList.length === 0) {
+    return <TodoListEmptyState />
   }
 
   return (
