@@ -56,6 +56,10 @@ function TodoList({ todoList, filterBy }: TodoListProps) {
               type: 'remove',
               payload: todoItem.id,
             })}
+            onToggleCompletion={() => dispatch({
+              type: 'toggleCompletion',
+              payload: todoItem.id,
+            })}
           />
         ))}
       </ul>

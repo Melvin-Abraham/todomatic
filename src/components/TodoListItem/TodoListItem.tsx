@@ -1,6 +1,5 @@
 import React from 'react';
 import { TodoItem } from 'utils/types';
-import useTodo from 'hooks/useTodo';
 import { EditIcon, TrashIcon } from '@iconicicons/react';
 import TodoListItemActionButton, { TodoListItemActionButtonProps } from './TodoListItemActionButton';
 import './TodoListItem.css';
@@ -9,11 +8,10 @@ interface TodoListItemProps {
   todoItem: TodoItem;
   onEdit: () => void;
   onDelete: () => void;
+  onToggleCompletion: () => void;
 }
 
-function TodoListItem({ todoItem, onDelete, onEdit }: TodoListItemProps) {
-  const { dispatch } = useTodo();
-
+function TodoListItem({ todoItem, onDelete, onEdit, onToggleCompletion }: TodoListItemProps) {
   const todoListItemActions: TodoListItemActionButtonProps[] = [
     {
       title: 'Edit Item',
@@ -28,11 +26,6 @@ function TodoListItem({ todoItem, onDelete, onEdit }: TodoListItemProps) {
       onClick: onDelete,
     },
   ];
-
-  const onToggleCompletion = () => dispatch({
-    type: 'toggleCompletion',
-    payload: todoItem.id,
-  });
 
   return (
     <li className="todo-list-item-root" data-completed={todoItem.complete}>
