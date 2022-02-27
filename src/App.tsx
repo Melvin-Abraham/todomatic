@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react';
 import Appbar from 'components/Appbar/Appbar';
-import Container from 'components/Container/Container';
+import Container from 'components/base/Container/Container';
 import AddTodoBox from 'components/AddTodoBox/AddTodoBox';
 import TabGroup, { FilterOption } from 'components/TabGroup/TabGroup';
 import TodoList from 'components/TodoList/TodoList';

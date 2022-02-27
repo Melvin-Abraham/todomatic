@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from 'components/Container/Container';
+import Container from 'components/base/Container/Container';
 import './Appbar.css';
 
 /**
