@@ -4,7 +4,7 @@
   --color-bg: #121212;
   --color-fg: #ffffff;
   --color-accent: #2279db;
-  --color-on-accent: #ffffff;
+  --color-on-accent: #090909;
 }
 
 body {
@@ -36,4 +36,28 @@ main {
   flex-direction: column;
   gap: 1em;
   z-index: 2;
+}
+
+input.styled-input {
+  --vertical-padding: 0.5em;
+  --horizontal-padding: 1em;
+
+  width: calc(100% - (var(--horizontal-padding) * 2));
+  padding: var(--vertical-padding) var(--horizontal-padding);
+  font: inherit;
+  color: var(--color-fg);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  outline: none;
+  border-radius: 0.5em;
+  transition: all 250ms ease;
+}
+
+input.styled-input:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+input.styled-input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 1.5em rgba(34, 121, 219, 0.25);
 }
