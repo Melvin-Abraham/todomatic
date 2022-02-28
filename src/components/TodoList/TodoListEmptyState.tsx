@@ -1,9 +1,21 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './TodoListEmptyState.css';
 
 function TodoListEmptyState() {
   return (
-    <div className="todo-list-empty-state-root">
+    <motion.div
+      className="todo-list-empty-state-root"
+      animate={{
+        scale: [1.2, 0.98, 1],
+        opacity: [0, 1],
+        transition: {
+          duration: 0.5,
+          type: 'spring',
+          bounce: 1,
+        }
+      }}
+    >
       <div className="todo-list-empty-state-illustration">
         {'(^-^*)'}
       </div>
@@ -15,7 +27,7 @@ function TodoListEmptyState() {
       <p className="todo-list-empty-state-details">
         There are no tasks to show for now...
       </p>
-    </div>
+    </motion.div>
   )
 }
 
