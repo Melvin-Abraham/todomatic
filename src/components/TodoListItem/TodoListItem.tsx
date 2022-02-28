@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { TodoItem } from 'utils/types';
 import { EditIcon, TrashIcon } from '@iconicicons/react';
 import TodoListItemActionButton, { TodoListItemActionButtonProps } from './TodoListItemActionButton';
@@ -28,7 +29,18 @@ function TodoListItem({ todoItem, onDelete, onEdit, onToggleCompletion }: TodoLi
   ];
 
   return (
-    <li className="todo-list-item-root" data-completed={todoItem.complete}>
+    <motion.li
+      className="todo-list-item-root"
+      data-completed={todoItem.complete}
+      layout
+      animate={{
+        y: [30, 0],
+        transition: {
+          duration: 0.3,
+          ease: 'easeOut',
+        }
+      }}
+    >
       <div
         className="todo-list-item-click-target"
         onClick={onToggleCompletion}
@@ -62,7 +74,7 @@ function TodoListItem({ todoItem, onDelete, onEdit, onToggleCompletion }: TodoLi
           />
         ))}
       </div>
-    </li>
+    </motion.li>
   )
 }
 
