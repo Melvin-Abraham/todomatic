@@ -46,7 +46,7 @@ function TodoList({ todoList, filterBy }: TodoListProps) {
   }
 
   if (filteredTodoList.length === 0) {
-    return <TodoListEmptyState />
+    return <TodoListEmptyState filterOption={filterBy} />
   }
 
   return (

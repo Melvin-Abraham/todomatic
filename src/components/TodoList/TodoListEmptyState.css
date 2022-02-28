@@ -9,7 +9,7 @@
 
 .todo-list-empty-state-illustration {
   opacity: 0.3;
-  font-size: clamp(1rem, 6rem, 20vw);
+  font-size: clamp(1rem, 6rem, 15vw);
 }
 
 .todo-list-empty-state-heading {
