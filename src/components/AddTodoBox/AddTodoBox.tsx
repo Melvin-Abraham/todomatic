@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { PlusIcon } from '@iconicicons/react';
 import useTodo from 'hooks/useTodo';
-import quickAddFeedbackAudio from 'public/quick_add.mp3';
-import inputErrorFeedbackAudio from 'public/error_feedback.mp3';
+import quickAddFeedbackAudio from '/quick_add.mp3';
+import inputErrorFeedbackAudio from '/error_feedback.mp3';
 import './AddTodoBox.css';
 
 const quickAddFeedbackAudioElement = new Audio(quickAddFeedbackAudio);

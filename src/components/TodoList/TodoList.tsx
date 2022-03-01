@@ -5,9 +5,9 @@ import TodoListEmptyState from 'components/TodoList/TodoListEmptyState';
 import { FilterOption } from 'components/TabGroup/TabGroup';
 import { TodoItem } from 'utils/types';
 import useTodo from 'hooks/useTodo';
-import pencilStrokeAudio from 'public/pencil_line.mp3';
-import buttonFeedbackAudio from 'public/button_press_click_feedback.mp3';
-import crumbledPaperAudio from 'public/trash_crumbled_paper.mp3';
+import pencilStrokeAudio from '/pencil_line.mp3';
+import buttonFeedbackAudio from '/button_press_click_feedback.mp3';
+import crumbledPaperAudio from '/trash_crumbled_paper.mp3';
 import './TodoList.css';
 
 interface TodoListProps {
