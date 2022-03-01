@@ -23,6 +23,35 @@
   box-shadow: 0 0 1.5em rgba(34, 121, 219, 0.25);
 }
 
+.add-todo-box-root[data-error=true] {
+  border-color: var(--color-error);
+  box-shadow: 0 0 1.5em rgb(239, 83, 80, 0.25);
+  animation: shake 300ms forwards;
+}
+
+/* @src: https://github.com/Melvin-Abraham/Google-Assistant-Unofficial-Desktop-Client/blob/master/app/src/style.css#L1032 */
+@keyframes shake {
+  0% {
+    transform: translateX(-5px);
+  }
+
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-2px);
+  }
+
+  75% {
+    transform: translateX(2px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 /* #endregion */
 
 /* #region leading */
@@ -39,6 +68,10 @@
 .add-todo-box-root[data-active=true] > .add-todo-box-leading {
   color: var(--color-accent);
   font-weight: bold;
+}
+
+.add-todo-box-root[data-error=true] > .add-todo-box-leading {
+  color: var(--color-error);
 }
 
 /* #endregion */
@@ -58,6 +91,10 @@
 
 .add-todo-box-input::placeholder {
   color: var(--placeholder-color);
+}
+
+.add-todo-box-root[data-error=true] .add-todo-box-input {
+  caret-color: var(--color-error);
 }
 
 /* #endregion */

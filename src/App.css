@@ -5,6 +5,7 @@
   --color-fg: #ffffff;
   --color-accent: #2279db;
   --color-on-accent: #090909;
+  --color-error: #ef5350;
 }
 
 body {
