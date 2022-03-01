@@ -4,13 +4,25 @@ import RenameModal from 'components/RenameModal/RenameModal';
 import TodoListEmptyState from 'components/TodoList/TodoListEmptyState';
 import { FilterOption } from 'components/TabGroup/TabGroup';
 import { TodoItem } from 'utils/types';
-import './TodoList.css';
 import useTodo from 'hooks/useTodo';
+import pencilStrokeAudio from 'public/pencil_line.mp3';
+import buttonFeedbackAudio from 'public/button_press_click_feedback.mp3';
+import crumbledPaperAudio from 'public/trash_crumbled_paper.mp3';
+import './TodoList.css';
 
 interface TodoListProps {
   todoList: TodoItem[];
   filterBy: FilterOption;
 }
+
+const pencilAudioElement = new Audio(pencilStrokeAudio);
+pencilAudioElement.volume = 0.3;
+
+const buttonFeedbackAudioElement = new Audio(buttonFeedbackAudio);
+buttonFeedbackAudioElement.volume = 0.3;
+
+const crumbledPaperAudioElement = new Audio(crumbledPaperAudio);
+crumbledPaperAudioElement.volume = 0.3;
 
 function TodoList({ todoList, filterBy }: TodoListProps) {
   const [editTodoItem, setEditTodoItem] = useState<TodoItem | undefined>(undefined);
@@ -57,14 +69,32 @@ function TodoList({ todoList, filterBy }: TodoListProps) {
             key={todoItem.id}
             todoItem={todoItem}
             onEdit={() => setEditTodoItem(todoItem)}
-            onDelete={() => dispatch({
-              type: 'remove',
-              payload: todoItem.id,
-            })}
-            onToggleCompletion={() => dispatch({
-              type: 'toggleCompletion',
-              payload: todoItem.id,
-            })}
+            onDelete={() => {
+              dispatch({
+                type: 'remove',
+                payload: todoItem.id,
+              });
+
+              // Play crumbled paper sound when deleting a task
+              crumbledPaperAudioElement.play();
+            }}
+            onToggleCompletion={() => {
+              dispatch({
+                type: 'toggleCompletion',
+                payload: todoItem.id,
+              });
+
+              if (!todoItem.complete) {
+                // Play pencil stroke sound when marking the task
+                // as completed
+                pencilAudioElement.play();
+              }
+              else {
+                // Play button feedback sound when marking the task
+                // as pending
+                buttonFeedbackAudioElement.play();
+              }
+            }}
           />
         ))}
       </ul>
