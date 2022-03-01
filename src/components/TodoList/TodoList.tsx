@@ -4,6 +4,7 @@ import RenameModal from 'components/RenameModal/RenameModal';
 import TodoListEmptyState from 'components/TodoList/TodoListEmptyState';
 import { FilterOption } from 'components/TabGroup/TabGroup';
 import { TodoItem } from 'utils/types';
+import createToast, { dismiss } from 'utils/toast';
 import useTodo from 'hooks/useTodo';
 import pencilStrokeAudio from '/pencil_line.mp3';
 import buttonFeedbackAudio from '/button_press_click_feedback.mp3';
@@ -77,6 +78,24 @@ function TodoList({ todoList, filterBy }: TodoListProps) {
 
               // Play crumbled paper sound when deleting a task
               crumbledPaperAudioElement.play();
+
+              // Allow user to undo deletion of a task via toast
+              createToast(`Deleted "${todoItem.todo}"`, 'info', {
+                label: 'Undo',
+                onClick: (toastInstance) => {
+                  // Add the task back to the list
+                  dispatch({
+                    type: 'add',
+                    payload: {
+                      todo: todoItem.todo,
+                      complete: todoItem.complete,
+                    },
+                  });
+
+                  // Dismiss the toast
+                  dismiss(toastInstance.id);
+                },
+              });
             }}
             onToggleCompletion={() => {
               dispatch({
