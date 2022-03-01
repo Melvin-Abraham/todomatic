@@ -1,4 +1,5 @@
 import React, { useState, useReducer } from 'react';
+import { Toaster } from 'react-hot-toast';
 import Appbar from 'components/Appbar/Appbar';
 import Container from 'components/base/Container/Container';
 import AddTodoBox from 'components/AddTodoBox/AddTodoBox';
@@ -33,6 +34,8 @@ function App() {
           </Container>
         </main>
       </div>
+
+      <Toaster />
     </TodoContext.Provider>
   )
 }

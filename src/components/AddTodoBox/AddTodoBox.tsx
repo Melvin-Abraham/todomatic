@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { PlusIcon } from '@iconicicons/react';
+import createToast, { dismiss } from 'utils/toast';
 import useTodo from 'hooks/useTodo';
 import quickAddFeedbackAudio from '/quick_add.mp3';
 import inputErrorFeedbackAudio from '/error_feedback.mp3';
@@ -24,6 +25,12 @@ function AddTodoBox() {
 
       // Show error styles to convey visually
       setIsError(true);
+
+      // Display error message as a toast
+      createToast('Please provide a name for the task', 'error', {
+        label: 'Dismiss',
+        onClick: (toastInstance) => dismiss(toastInstance.id),
+      });
 
       return;
     };

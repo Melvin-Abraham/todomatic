@@ -1,0 +1,56 @@
+.toast-root {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-fg);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 1em;
+  gap: 1em;
+  padding: 1em;
+  justify-content: flex-start !important;
+  font-size: 0.95em;
+  min-width: 35%;
+}
+
+.toast-root > div {
+  justify-content: flex-start;
+}
+
+.toast-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+.toast-message {
+  flex-grow: 1;
+}
+
+.toast-action button {
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  font: inherit;
+  color: var(--color-fg);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 250ms ease;
+}
+
+.toast-action button:focus-visible {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.toast-action button:hover {
+  opacity: 0.9;
+}
+
+.toast-action button:active {
+  opacity: 0.7;
+}
