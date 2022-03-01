@@ -29,5 +29,6 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: aliasOptions,
-  }
+  },
+  base: '/todomatic/',
 });
