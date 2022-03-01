@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { PlusIcon } from '@iconicicons/react';
 import useTodo from 'hooks/useTodo';
+import quickAddFeedbackAudio from 'public/quick_add.mp3';
 import './AddTodoBox.css';
+
+const quickAddFeedbackAudioElement = new Audio(quickAddFeedbackAudio);
+quickAddFeedbackAudioElement.volume = 0.8;
 
 /**
  * Renders an input group to add todo items
@@ -23,6 +27,9 @@ function AddTodoBox() {
 
     // Reset the input text
     setTodoText('');
+
+    // Play feedback when the task has been added
+    quickAddFeedbackAudioElement.play();
   }
 
   return (
