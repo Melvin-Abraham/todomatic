@@ -1,12 +1,12 @@
 .toast-root {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-fg);
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: var(--color-fg) !important;
   border: 2px solid rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 1em;
   gap: 1em;
-  padding: 1em;
+  padding: 1em !important;
   justify-content: flex-start !important;
   font-size: 0.95em;
   min-width: 35%;
