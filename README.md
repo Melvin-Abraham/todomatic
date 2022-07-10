@@ -12,6 +12,6 @@ A simple todo web application written in **React + Typescript**. Try out now on 
 
 - ✅ Focus on **accessiblity**
 
-## Sceenshot
+## Screenshot
 
 ![Todomatic Screenshot](./assets/todomatic-screenshot.png)
